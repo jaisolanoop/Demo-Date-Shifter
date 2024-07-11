@@ -11,6 +11,7 @@
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
     "sourceApiVersion": "50.0",
+    "oauthLocalPort": 1718,
     "packageAliases": {
         "Demo Date Shifter": "0Ho2E000000007CSAQ",
         "Demo Date Shifter@1.0.0-1": "04t2E000003oboDQAQ",
