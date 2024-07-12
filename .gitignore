@@ -9,3 +9,4 @@
 /.sfdx/typings/**
 /.sfdx/sfdx-config.json
 .sf/config.json
+/.sf/**
