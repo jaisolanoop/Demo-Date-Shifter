@@ -8,4 +8,5 @@
 /.sfdx/tools/**
 /.sfdx/typings/**
 /.sfdx/sfdx-config.json
+/.sf/config.json
 /.sf/**
