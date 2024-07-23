@@ -1,20 +1,16 @@
-import { LightningElement,  api,wire } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import getContactsByAccountId from '@salesforce/apex/contactRelatedAccount.getContactsByAccountId';
 
-export default class ContactsRelatedToAccount extends LightningElement {
+const column = [
+    { label: 'Name', fieldName: 'Name' },
+    { label: 'Email', fieldName: 'Email', type: 'email' },
+    { label: 'Phone', fieldName: 'Phone', type: 'phone' },
+];
 
-    @api recordId;
-    contacts;
-    error;
+export default class AccountContacts extends LightningElement {
+    @api recordId; 
+    columns = column;
 
     @wire(getContactsByAccountId, { accountId: '$recordId' })
-    wiredContacts({ error, data }) {
-        if (data) {
-            this.contacts = data;
-            this.error = undefined;
-        } else if (error) {
-            this.error = error;
-            this.contacts = undefined;
-        }
-    }
+    contacts;
 }

@@ -5,6 +5,6 @@ public with sharing class contactRelatedAccount {
             return new List<Contact>();
         }
         
-        return [SELECT Id, FirstName, LastName, Email FROM Contact WHERE AccountId = :accountId];
+        return [SELECT Id, Name, Email, Phone FROM Contact WHERE AccountId = :accountId];
     }
 }
