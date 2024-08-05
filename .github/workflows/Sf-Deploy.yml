@@ -23,7 +23,7 @@ jobs:
 
       - name: Authorize SF Org
         run: |
-          sfdx force:auth:jwt:grant --clientid 3MVG9BriLgWNwNOSNV9MyNQCx8N.c0C.3cF4e1W.8coCajsuW6Eld1MrER8EehdcL0TdK9r4TPumRVKahHIHO --jwtkeyfile ./buildfiles/server.key --username vismaya.v@milestone.tech.main.dev --instanceurl https://milestone-main--dev.sandbox.lightning.force.com/ -a Dev
+          sfdx force:auth:jwt:grant --clientid 3MVG9BriLgWNwNOSNV9MyNQCx8N.c0C.3cF4e1W.8coCajsuW6Eld1MrER8EehdcL0TdK9r4TPumRVKahHIHO --jwtkeyfile ./buildfiles/server.key --username vismaya.v@milestone.tech.main.dev --instanceurl https://login.salesforce.com/ -a Dev
 
       - name: Convert to Deploy Source
         run: sfdx force:source:convert -r ./force-app -d ./toDeploy
@@ -33,3 +33,4 @@ jobs:
 
       - name: Deploy to SF Org
         run: sfdx force:source:deploy -x manifest/package.xml -u Dev
+        
