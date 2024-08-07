@@ -80,7 +80,7 @@ jobs:
 
       - name: Authorize SF Org
         run: |
-          sfdx force:auth:jwt:grant --clientid 3MVG9BriLgWNwNORkGA7mYj7Wk4u7fWoJ7vQnO4Gcm2f4QOxbByCGTTl7tjRCgukhhebIb292oOFh79GSiblx --jwtkeyfile ./buildfiles/server.key --username vismaya.v@milestone.tech.main.uat --instanceurl milestone-main--uat.sandbox.my.salesforce.com -a UAT
+          sfdx force:auth:jwt:grant --clientid 3MVG9BriLgWNwNORkGA7mYj7Wk4u7fWoJ7vQnO4Gcm2f4QOxbByCGTTl7tjRCgukhhebIb292oOFh79GSiblx --jwtkeyfile ./buildfiles/server.key --username vismaya.v@milestone.tech.main.uat --instanceurl https://milestone-main--uat.sandbox.my.salesforce.com -a UAT
 
       - name: Convert to Deploy Source
         run: sfdx force:source:convert -r ./force-app -d ./toDeploy
@@ -109,7 +109,7 @@ jobs:
 
       - name: Authorize SF Org
         run: |
-          sfdx force:auth:jwt:grant --clientid 3MVG9kb26yEQGZW38kQM7Uqa0.Y6xMDNAp7O_9fp6uQRtNBlZWnLDrxVImnGWMmL4QUWhWkHQuvN3LNZ.TUtv --jwtkeyfile ./buildfiles/server.key --username selva.kumar@milestone.tech.main --instanceurl milestone-main.my.salesforce.com -a main
+          sfdx force:auth:jwt:grant --clientid 3MVG9kb26yEQGZW38kQM7Uqa0.Y6xMDNAp7O_9fp6uQRtNBlZWnLDrxVImnGWMmL4QUWhWkHQuvN3LNZ.TUtv --jwtkeyfile ./buildfiles/server.key --username selva.kumar@milestone.tech.main --instanceurl https://milestone-main.my.salesforce.com -a main
 
       - name: Convert to Deploy Source
         run: sfdx force:source:convert -r ./force-app -d ./toDeploy
