@@ -15,15 +15,13 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
-        with:
-          node-version: 18
+        with: node-version: 18
 
       - name: Install SFDX CLI
         run: npm install sfdx-cli --global
 
       - name: Authorize SF Org
-        run: |
-          sfdx force:auth:jwt:grant --clientid 3MVG9BriLgWNwNOSNV9MyNQCx8N.c0C.3cF4e1W.8coCajsuW6Eld1MrER8EehdcL0TdK9r4TPumRVKahHIHO --jwtkeyfile ./buildfiles/server.key --username vismaya.v@milestone.tech.main.dev --instanceurl https://milestone-main--dev.sandbox.my.salesforce.com -a Dev
+        run: sfdx force:auth:jwt:grant --clientid 3MVG9BriLgWNwNOSNV9MyNQCx8N.c0C.3cF4e1W.8coCajsuW6Eld1MrER8EehdcL0TdK9r4TPumRVKahHIHO --jwtkeyfile ./buildfiles/server.key --username vismaya.v@milestone.tech.main.dev --instanceurl https://milestone-main--dev.sandbox.my.salesforce.com -a Dev
 
       - name: Convert to Deploy Source
         run: sfdx force:source:convert -r ./force-app -d ./toDeploy
