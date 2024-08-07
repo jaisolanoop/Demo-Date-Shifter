@@ -15,8 +15,7 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
-        with:
-          node-version: 18
+        with: node-version: 18
 
       - name: Install SFDX CLI
         run: npm install sfdx-cli --global
