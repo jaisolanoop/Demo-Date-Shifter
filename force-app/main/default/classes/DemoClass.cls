@@ -1,6 +1,6 @@
 public class DemoClass {
-    public static DemoTestClass() {
-        system.debug("just demo");
+    public static void  DemoTestClass() {
+    System.debug('just demo');
 
     }
 }
