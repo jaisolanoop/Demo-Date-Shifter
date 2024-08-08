@@ -22,7 +22,7 @@ jobs:
         run: npm install sfdx-cli --global
 
       - name: Authorize SF Org
-        run: sfdx force:auth:jwt:grant --clientid 3MVG9BriLgWNwNOSNV9MyNQCx8N.c0C.3cF4e1W.8coCajsuW6Eld1MrER8EehdcL0TdK9r4TPumRVKahHIHO --jwtkeyfile ./buildfiles/server.key --username vismaya.v@milestone.tech.main.dev --instanceurl https://login.salesforce.com/ -a Dev
+        run: sfdx force:auth:jwt:grant --clientid ${{secrets.CLIENTID_Dev}} --jwtkeyfile ./buildfiles/server.key --username vismaya.v@milestone.tech.main.dev --instanceurl https://login.salesforce.com/ -a Dev
 
       - name: Convert to Deploy Source
         run: sfdx force:source:convert -r ./force-app -d ./toDeploy
@@ -51,7 +51,7 @@ jobs:
 
       - name: Authorize SF Org
         run: |
-          sfdx force:auth:jwt:grant --clientid 3MVG933SC8s3vkAXYEI7A7jtsLdV6m0gim3wIGZ01gljxUlc46gof9HBylFEAyj5hkmydl7XT3klu.89PJfCh --jwtkeyfile ./buildfiles/server.key --username vismaya.v@milestone.tech.main.qa --instanceurl https://milestone-main--qa.sandbox.my.salesforce.com -a QA
+          sfdx force:auth:jwt:grant --clientid ${{secrets.CLIENTID_INT}} --jwtkeyfile ./buildfiles/server.key --username vismaya.v@milestone.tech.main.qa --instanceurl https://milestone-main--qa.sandbox.my.salesforce.com -a QA
 
       - name: Convert to Deploy Source
         run: sfdx force:source:convert -r ./force-app -d ./toDeploy
@@ -80,7 +80,7 @@ jobs:
 
       - name: Authorize SF Org
         run: |
-          sfdx force:auth:jwt:grant --clientid 3MVG9BriLgWNwNORkGA7mYj7Wk4u7fWoJ7vQnO4Gcm2f4QOxbByCGTTl7tjRCgukhhebIb292oOFh79GSiblx --jwtkeyfile ./buildfiles/server.key --username vismaya.v@milestone.tech.main.uat --instanceurl https://milestone-main--uat.sandbox.my.salesforce.com -a UAT
+          sfdx force:auth:jwt:grant --clientid ${{secrets.CLIENTID_UAT}} --jwtkeyfile ./buildfiles/server.key --username vismaya.v@milestone.tech.main.uat --instanceurl https://milestone-main--uat.sandbox.my.salesforce.com -a UAT
 
       - name: Convert to Deploy Source
         run: sfdx force:source:convert -r ./force-app -d ./toDeploy
@@ -109,7 +109,7 @@ jobs:
 
       - name: Authorize SF Org
         run: |
-          sfdx force:auth:jwt:grant --clientid 3MVG9kb26yEQGZW38kQM7Uqa0.Y6xMDNAp7O_9fp6uQRtNBlZWnLDrxVImnGWMmL4QUWhWkHQuvN3LNZ.TUtv --jwtkeyfile ./buildfiles/server.key --username selva.kumar@milestone.tech.main --instanceurl https://milestone-main.my.salesforce.com -a main
+          sfdx force:auth:jwt:grant --clientid ${{secrets.CLIENTID_Main}} --jwtkeyfile ./buildfiles/server.key --username selva.kumar@milestone.tech.main --instanceurl https://milestone-main.my.salesforce.com -a main
 
       - name: Convert to Deploy Source
         run: sfdx force:source:convert -r ./force-app -d ./toDeploy
